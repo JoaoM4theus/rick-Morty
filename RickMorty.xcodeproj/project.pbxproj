@@ -11,6 +11,7 @@
 		DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496302ACF58B200785301 /* NetworkClientTests.swift */; };
 		DC8496322ACF58B200785301 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = DC8496262ACF58B200785301 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC84963A2ACF591800785301 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496392ACF591800785301 /* NetworkClient.swift */; };
+		DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		DC84962B2ACF58B200785301 /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8496302ACF58B200785301 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		DC8496392ACF591800785301 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		DC8495FD2ACF580700785301 = {
 			isa = PBXGroup;
 			children = (
+				DC84963B2ACF632600785301 /* XCTestCase */,
 				DC8496252ACF58B200785301 /* NetworkClient */,
 				DC84962F2ACF58B200785301 /* NetworkClientTests */,
 				DC8496082ACF580700785301 /* Products */,
@@ -83,6 +86,14 @@
 				DC8496302ACF58B200785301 /* NetworkClientTests.swift */,
 			);
 			path = NetworkClientTests;
+			sourceTree = "<group>";
+		};
+		DC84963B2ACF632600785301 /* XCTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */,
+			);
+			path = XCTestCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */,
 				DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

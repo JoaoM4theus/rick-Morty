@@ -14,8 +14,13 @@ public protocol NetworkClient {
 
 final class NetworkService: NetworkClient {
 
+    private let session: URLSession
+    public init(session: URLSession) {
+        self.session = session
+    }
+
     func request(from url: URL, completion: @escaping (NetworkResult) -> Void) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        session.dataTask(with: url) { data, response, error in
         }.resume()
     }
 
