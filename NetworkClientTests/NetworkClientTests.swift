@@ -39,6 +39,8 @@ final class NetworkClientTests: XCTestCase {
         XCTAssertNotNil(resultErrorForInvalidCases(data: data, response: httpResponse, error: anyError))
         XCTAssertNotNil(resultErrorForInvalidCases(data: data, response: urlResponse, error: nil))
 
+        let result = resultErrorForInvalidCases(data: nil, response: nil, error: anyError)
+        XCTAssertEqual(result as? NSError, anyError)
     }
 
     private func resultErrorForInvalidCases(
