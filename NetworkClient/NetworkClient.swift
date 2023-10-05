@@ -21,6 +21,17 @@ final class NetworkService: NetworkClient {
 
     func request(from url: URL, completion: @escaping (NetworkResult) -> Void) {
         session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            if let data = data,
+               let response = response as? HTTPURLResponse {
+                completion(.success((data, response)))
+                return
+            }
+            let error = NSError(domain: "Unexpected values", code: -1)
+            completion(.failure(error))
         }.resume()
     }
 
