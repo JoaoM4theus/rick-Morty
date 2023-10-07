@@ -11,7 +11,6 @@
 		DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496302ACF58B200785301 /* NetworkClientTests.swift */; };
 		DC8496322ACF58B200785301 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = DC8496262ACF58B200785301 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC84963A2ACF591800785301 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496392ACF591800785301 /* NetworkClient.swift */; };
-		DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
 		DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */; };
 		DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */; };
 		DCB4DE8B2AD1AA660047217F /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
@@ -19,6 +18,10 @@
 		DCB4DE912AD1AA660047217F /* RickMortyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB4DE852AD1AA660047217F /* RickMortyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */; };
 		DCB4DE9C2AD1ADF90047217F /* RemoteRickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */; };
+		DCB4DE9E2AD1AF930047217F /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; };
+		DCB4DE9F2AD1AF930047217F /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
+		DCB4DEA42AD1AFDE0047217F /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,28 @@
 			remoteGlobalIDString = DCB4DE822AD1AA660047217F;
 			remoteInfo = RickMortyDomain;
 		};
+		DCB4DEA02AD1AF930047217F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8495FE2ACF580700785301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC8496232ACF58B200785301;
+			remoteInfo = NetworkClient;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCB4DEA22AD1AF930047217F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DCB4DE9F2AD1AF930047217F /* NetworkClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DC8496242ACF58B200785301 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB4DE9E2AD1AF930047217F /* NetworkClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +123,7 @@
 				DCB4DE842AD1AA660047217F /* RickMortyDomain */,
 				DCB4DE8E2AD1AA660047217F /* RickMortyDomainTests */,
 				DC8496082ACF580700785301 /* Products */,
+				DCB4DE9D2AD1AF930047217F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +189,13 @@
 				DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */,
 			);
 			path = RemoteLoader;
+			sourceTree = "<group>";
+		};
+		DCB4DE9D2AD1AF930047217F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,10 +264,12 @@
 				DCB4DE7F2AD1AA660047217F /* Sources */,
 				DCB4DE802AD1AA660047217F /* Frameworks */,
 				DCB4DE812AD1AA660047217F /* Resources */,
+				DCB4DEA22AD1AF930047217F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DCB4DEA12AD1AF930047217F /* PBXTargetDependency */,
 			);
 			name = RickMortyDomain;
 			productName = RickMortyDomain;
@@ -350,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */,
+				DCB4DEA42AD1AFDE0047217F /* XCTestCase+Helper.swift in Sources */,
 				DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */,
 				DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */,
 				DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */,
@@ -370,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */,
 				DCB4DE902AD1AA660047217F /* RickMortyDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +422,11 @@
 			isa = PBXTargetDependency;
 			target = DCB4DE822AD1AA660047217F /* RickMortyDomain */;
 			targetProxy = DCB4DE8C2AD1AA660047217F /* PBXContainerItemProxy */;
+		};
+		DCB4DEA12AD1AF930047217F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC8496232ACF58B200785301 /* NetworkClient */;
+			targetProxy = DCB4DEA02AD1AF930047217F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

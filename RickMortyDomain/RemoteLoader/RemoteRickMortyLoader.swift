@@ -6,17 +6,26 @@
 //
 
 import Foundation
+import NetworkClient
 
 public struct Character {
     
 }
 
 public final class RemoteRickMortyLoader: RickMortyLoader {
-
     public typealias T = Result<[Character], RickMortyResultError>
-    
+
+    let networkClient: NetworkClient
+    let fromUrl: URL
+
+    init(networkClient: NetworkClient, fromUrl: URL) {
+        self.networkClient = networkClient
+        self.fromUrl = fromUrl
+    }
+
     public func load(completion: @escaping (Result<[Character], RickMortyResultError>) -> Void) {
-        <#code#>
+        networkClient.request(from: fromUrl) { _ in
+        }
     }
 
 }
