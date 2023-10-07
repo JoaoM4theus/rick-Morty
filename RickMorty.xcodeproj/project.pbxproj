@@ -14,10 +14,10 @@
 		DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */; };
 		DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */; };
 		DCB4DE8B2AD1AA660047217F /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
-		DCB4DE902AD1AA660047217F /* RickMortyDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */; };
+		DCB4DE902AD1AA660047217F /* CharacterDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */; };
 		DCB4DE912AD1AA660047217F /* RickMortyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB4DE852AD1AA660047217F /* RickMortyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */; };
-		DCB4DE9C2AD1ADF90047217F /* RemoteRickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */; };
+		DCB4DE9C2AD1ADF90047217F /* RemoteCharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */; };
 		DCB4DE9E2AD1AF930047217F /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; };
 		DCB4DE9F2AD1AF930047217F /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
@@ -74,9 +74,9 @@
 		DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RickMortyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB4DE852AD1AA660047217F /* RickMortyDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickMortyDomain.h; sourceTree = "<group>"; };
 		DCB4DE8A2AD1AA660047217F /* RickMortyDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyDomainTests.swift; sourceTree = "<group>"; };
+		DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDomainTests.swift; sourceTree = "<group>"; };
 		DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyLoader.swift; sourceTree = "<group>"; };
-		DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRickMortyLoader.swift; sourceTree = "<group>"; };
+		DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 		DCB4DE8E2AD1AA660047217F /* RickMortyDomainTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */,
+				DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */,
 			);
 			path = RickMortyDomainTests;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 		DCB4DE9A2AD1ADE80047217F /* RemoteLoader */ = {
 			isa = PBXGroup;
 			children = (
-				DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */,
+				DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */,
 			);
 			path = RemoteLoader;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */,
-				DCB4DE9C2AD1ADF90047217F /* RemoteRickMortyLoader.swift in Sources */,
+				DCB4DE9C2AD1ADF90047217F /* RemoteCharacterLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */,
-				DCB4DE902AD1AA660047217F /* RickMortyDomainTests.swift in Sources */,
+				DCB4DE902AD1AA660047217F /* CharacterDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
