@@ -43,6 +43,39 @@ final class NetworkClientTests: XCTestCase {
         XCTAssertEqual(result as? NSError, anyError)
     }
 
+    func test_loadRequest_and_completion_with_success_for_validCases() {
+        let url = URL(string: "https://rickandmortyapi.com/")!
+        let anyError = NSError(domain: "Any error", code: -1)
+        let data = Data()
+        let okResponse = 200
+        let httpResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let result = resultErrorForValidCases(data: data, response: httpResponse, error: nil)
+        
+        XCTAssertEqual(result?.data, data)
+        XCTAssertEqual(result?.response, httpResponse)
+        XCTAssertEqual(result?.response.url, url)
+        XCTAssertEqual(result?.response.statusCode, okResponse)
+        
+    }
+
+    private func resultErrorForValidCases(
+        data: Data?,
+        response: URLResponse?,
+        error: Error?,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (data: Data?, response: HTTPURLResponse)? {
+        let result = assert(data: data, response: response, error: error)
+
+        switch result {
+        case let .success((data, response)):
+            return (data, response)
+        default: XCTFail("expected success but returned \(result)", file: file, line: line)
+        }
+        return nil
+    }
+
     private func resultErrorForInvalidCases(
         data: Data?,
         response: URLResponse?,
@@ -57,7 +90,7 @@ final class NetworkClientTests: XCTestCase {
         case let .failure(error):
             return error
         default:
-            XCTFail("expected failure but returned \(result)", file: file, line: line)
+            XCTFail("expected failure but returned \(String(describing: result))", file: file, line: line)
         }
         return nil
     }
