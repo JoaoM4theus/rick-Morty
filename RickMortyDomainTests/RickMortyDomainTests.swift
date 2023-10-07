@@ -21,6 +21,16 @@ final class RickMortyDomainTests: XCTestCase {
         XCTAssertEqual(spy.urlRequest, [anyUrl])
     }
 
+    func test_load_twice() {
+        let spy = NetworkClientSpy()
+        let anyUrl = URL(string: "https://rickandmortyapi.com/")!
+        let sut = RemoteRickMortyLoader(networkClient: spy, fromUrl: anyUrl)
+        
+        sut.load { _ in }
+        sut.load { _ in }
+        
+        XCTAssertEqual(spy.urlRequest, [anyUrl, anyUrl])
+    }
 }
 
 final class NetworkClientSpy: NetworkClient {
