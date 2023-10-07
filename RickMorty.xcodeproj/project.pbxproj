@@ -12,6 +12,13 @@
 		DC8496322ACF58B200785301 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = DC8496262ACF58B200785301 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC84963A2ACF591800785301 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496392ACF591800785301 /* NetworkClient.swift */; };
 		DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
+		DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */; };
+		DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */; };
+		DCB4DE8B2AD1AA660047217F /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
+		DCB4DE902AD1AA660047217F /* RickMortyDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */; };
+		DCB4DE912AD1AA660047217F /* RickMortyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB4DE852AD1AA660047217F /* RickMortyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */; };
+		DCB4DE9C2AD1ADF90047217F /* RemoteRickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +29,13 @@
 			remoteGlobalIDString = DC8496232ACF58B200785301;
 			remoteInfo = NetworkClient;
 		};
+		DCB4DE8C2AD1AA660047217F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8495FE2ACF580700785301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCB4DE822AD1AA660047217F;
+			remoteInfo = RickMortyDomain;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +45,14 @@
 		DC8496302ACF58B200785301 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		DC8496392ACF591800785301 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helper.swift"; sourceTree = "<group>"; };
+		DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionSpy.swift; sourceTree = "<group>"; };
+		DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskSpy.swift; sourceTree = "<group>"; };
+		DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RickMortyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB4DE852AD1AA660047217F /* RickMortyDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickMortyDomain.h; sourceTree = "<group>"; };
+		DCB4DE8A2AD1AA660047217F /* RickMortyDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyDomainTests.swift; sourceTree = "<group>"; };
+		DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyLoader.swift; sourceTree = "<group>"; };
+		DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRickMortyLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +71,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCB4DE802AD1AA660047217F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE872AD1AA660047217F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB4DE8B2AD1AA660047217F /* RickMortyDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,6 +95,8 @@
 				DC84963B2ACF632600785301 /* XCTestCase */,
 				DC8496252ACF58B200785301 /* NetworkClient */,
 				DC84962F2ACF58B200785301 /* NetworkClientTests */,
+				DCB4DE842AD1AA660047217F /* RickMortyDomain */,
+				DCB4DE8E2AD1AA660047217F /* RickMortyDomainTests */,
 				DC8496082ACF580700785301 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +106,8 @@
 			children = (
 				DC8496242ACF58B200785301 /* NetworkClient.framework */,
 				DC84962B2ACF58B200785301 /* NetworkClientTests.xctest */,
+				DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */,
+				DCB4DE8A2AD1AA660047217F /* RickMortyDomainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				DC8496302ACF58B200785301 /* NetworkClientTests.swift */,
+				DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */,
+				DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */,
 			);
 			path = NetworkClientTests;
 			sourceTree = "<group>";
@@ -96,6 +139,32 @@
 			path = XCTestCase;
 			sourceTree = "<group>";
 		};
+		DCB4DE842AD1AA660047217F /* RickMortyDomain */ = {
+			isa = PBXGroup;
+			children = (
+				DCB4DE9A2AD1ADE80047217F /* RemoteLoader */,
+				DCB4DE852AD1AA660047217F /* RickMortyDomain.h */,
+				DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */,
+			);
+			path = RickMortyDomain;
+			sourceTree = "<group>";
+		};
+		DCB4DE8E2AD1AA660047217F /* RickMortyDomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCB4DE8F2AD1AA660047217F /* RickMortyDomainTests.swift */,
+			);
+			path = RickMortyDomainTests;
+			sourceTree = "<group>";
+		};
+		DCB4DE9A2AD1ADE80047217F /* RemoteLoader */ = {
+			isa = PBXGroup;
+			children = (
+				DCB4DE9B2AD1ADF90047217F /* RemoteRickMortyLoader.swift */,
+			);
+			path = RemoteLoader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,6 +173,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC8496322ACF58B200785301 /* NetworkClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE7E2AD1AA660047217F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB4DE912AD1AA660047217F /* RickMortyDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +223,42 @@
 			productReference = DC84962B2ACF58B200785301 /* NetworkClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DCB4DE822AD1AA660047217F /* RickMortyDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCB4DE922AD1AA660047217F /* Build configuration list for PBXNativeTarget "RickMortyDomain" */;
+			buildPhases = (
+				DCB4DE7E2AD1AA660047217F /* Headers */,
+				DCB4DE7F2AD1AA660047217F /* Sources */,
+				DCB4DE802AD1AA660047217F /* Frameworks */,
+				DCB4DE812AD1AA660047217F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RickMortyDomain;
+			productName = RickMortyDomain;
+			productReference = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DCB4DE892AD1AA660047217F /* RickMortyDomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCB4DE952AD1AA660047217F /* Build configuration list for PBXNativeTarget "RickMortyDomainTests" */;
+			buildPhases = (
+				DCB4DE862AD1AA660047217F /* Sources */,
+				DCB4DE872AD1AA660047217F /* Frameworks */,
+				DCB4DE882AD1AA660047217F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCB4DE8D2AD1AA660047217F /* PBXTargetDependency */,
+			);
+			name = RickMortyDomainTests;
+			productName = RickMortyDomainTests;
+			productReference = DCB4DE8A2AD1AA660047217F /* RickMortyDomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +274,13 @@
 						LastSwiftMigration = 1430;
 					};
 					DC84962A2ACF58B200785301 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					DCB4DE822AD1AA660047217F = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+					};
+					DCB4DE892AD1AA660047217F = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -180,6 +300,8 @@
 			targets = (
 				DC8496232ACF58B200785301 /* NetworkClient */,
 				DC84962A2ACF58B200785301 /* NetworkClientTests */,
+				DCB4DE822AD1AA660047217F /* RickMortyDomain */,
+				DCB4DE892AD1AA660047217F /* RickMortyDomainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +315,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DC8496292ACF58B200785301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE812AD1AA660047217F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE882AD1AA660047217F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,7 +351,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC84963E2ACF637300785301 /* XCTestCase+Helper.swift in Sources */,
+				DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */,
+				DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */,
 				DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE7F2AD1AA660047217F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */,
+				DCB4DE9C2AD1ADF90047217F /* RemoteRickMortyLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4DE862AD1AA660047217F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB4DE902AD1AA660047217F /* RickMortyDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +381,11 @@
 			isa = PBXTargetDependency;
 			target = DC8496232ACF58B200785301 /* NetworkClient */;
 			targetProxy = DC84962D2ACF58B200785301 /* PBXContainerItemProxy */;
+		};
+		DCB4DE8D2AD1AA660047217F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCB4DE822AD1AA660047217F /* RickMortyDomain */;
+			targetProxy = DCB4DE8C2AD1AA660047217F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,6 +611,107 @@
 			};
 			name = Release;
 		};
+		DCB4DE932AD1AA660047217F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCB4DE942AD1AA660047217F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCB4DE962AD1AA660047217F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCB4DE972AD1AA660047217F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -477,6 +738,24 @@
 			buildConfigurations = (
 				DC8496372ACF58B200785301 /* Debug */,
 				DC8496382ACF58B200785301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCB4DE922AD1AA660047217F /* Build configuration list for PBXNativeTarget "RickMortyDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCB4DE932AD1AA660047217F /* Debug */,
+				DCB4DE942AD1AA660047217F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCB4DE952AD1AA660047217F /* Build configuration list for PBXNativeTarget "RickMortyDomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCB4DE962AD1AA660047217F /* Debug */,
+				DCB4DE972AD1AA660047217F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
