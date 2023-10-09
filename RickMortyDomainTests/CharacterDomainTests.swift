@@ -31,7 +31,6 @@ final class CharacterDomainTests: XCTestCase {
 
     func test_load_returned_error_for_connectivity() {
         let (sut, spy, _) = makeSUT()
-        let result: ResultType = .failure(.withoutConnectivity)
         
         assert(sut, completion: .failure(.withoutConnectivity)) {
             spy.completionWithError()
@@ -44,6 +43,15 @@ final class CharacterDomainTests: XCTestCase {
 
         assert(sut, completion: .failure(.invalidData)) {
             spy.completionWithSuccess()
+        }
+
+    }
+
+    func test_load_and_returneed_success_with_empty_list() {
+        let (sut, spy, _) = makeSUT()
+
+        assert(sut, completion: .success([])) {
+            spy.completionWithSuccess(data: emptyData())
         }
 
     }
@@ -67,12 +75,17 @@ final class CharacterDomainTests: XCTestCase {
             returnedResult = result
             exp.fulfill()
         }
-        
+
         action()
-        
+
         wait(for: [exp], timeout: 1.0)
         XCTAssertEqual(returnedResult, result)
     }
+
+    private func emptyData() -> Data {
+        return Data("{ \"results\": [] }".utf8)
+    }
+
 }
 
 final class NetworkClientSpy: NetworkClient {
