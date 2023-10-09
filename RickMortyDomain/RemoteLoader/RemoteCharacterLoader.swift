@@ -9,8 +9,29 @@ import Foundation
 import NetworkClient
 
 public struct Character: Decodable, Equatable {
-    
+    let id: UUID
+    let name: String
+    let status: String
+    let species: String
+    let gender: String
+    let origin: Origin
+    let location: Location
+    let image: String
+    let episodes: [String]
+    let url: String
+    let created: String
 }
+
+public struct Origin: Decodable, Equatable {
+    let name: String
+    let url: String
+}
+
+public struct Location: Decodable, Equatable {
+    let name: String
+    let url: String
+}
+
 
 public struct CharacterRoot: Decodable {
     let results: [Character]
