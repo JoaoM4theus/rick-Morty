@@ -52,6 +52,7 @@ final class CharacterDomainTests: XCTestCase {
         assert(sut, completion: .success([])) {
             spy.completionWithSuccess(data: emptyData())
         }
+
     }
     
     func test_load_and_returned_success_with_character_list() throws {
@@ -63,6 +64,18 @@ final class CharacterDomainTests: XCTestCase {
             let jsonItems = ["results": [json, json2]]
             let data = try! JSONSerialization.data(withJSONObject: jsonItems)
             spy.completionWithSuccess(data: data)
+        }
+    }
+    
+    func test_load_and_returned_error_for_invalid_status_code() throws {
+        let (sut, spy, _) = makeSUT()
+
+        assert(sut, completion: .failure(.invalidData)) {
+            let (_, json) = makeCharacter()
+            let (_, json2) = makeCharacter()
+            let jsonItems = ["results": [json, json2]]
+            let data = try! JSONSerialization.data(withJSONObject: jsonItems)
+            spy.completionWithSuccess(data: data, statusCode: 201)
         }
     }
     
