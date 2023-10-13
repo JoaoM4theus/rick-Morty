@@ -79,6 +79,21 @@ final class CharacterDomainTests: XCTestCase {
         }
     }
     
+    func test_load_not_returned_after_sut_deallocated() {
+        let anyUrl = URL(string: "https://rickandmortyapi.com/")!
+        let spy = NetworkClientSpy()
+        var sut: RemoteCharacterLoader? = RemoteCharacterLoader(networkClient: spy, fromUrl: anyUrl)
+        
+        var returnedResult: ResultType?
+        sut?.load(completion: { result in
+            returnedResult = result
+        })
+        
+        sut = nil
+        spy.completionWithSuccess()
+        XCTAssertNil(returnedResult)
+    }
+    
     private func makeSUT() -> (RemoteCharacterLoader, NetworkClientSpy, URL) {
         let spy = NetworkClientSpy()
         let anyUrl = URL(string: "https://rickandmortyapi.com/")!
