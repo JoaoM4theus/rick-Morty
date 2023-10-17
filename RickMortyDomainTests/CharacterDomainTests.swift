@@ -94,11 +94,12 @@ final class CharacterDomainTests: XCTestCase {
         XCTAssertNil(returnedResult)
     }
     
-    private func makeSUT() -> (RemoteCharacterLoader, NetworkClientSpy, URL) {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (RemoteCharacterLoader, NetworkClientSpy, URL) {
         let spy = NetworkClientSpy()
         let anyUrl = URL(string: "https://rickandmortyapi.com/")!
         let sut = RemoteCharacterLoader(networkClient: spy, fromUrl: anyUrl)
-        
+        trackForMemoryLeaks(spy, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, spy, anyUrl)
     }
     
