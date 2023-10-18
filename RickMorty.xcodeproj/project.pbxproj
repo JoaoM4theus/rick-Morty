@@ -10,6 +10,8 @@
 		DC1B24D02AD9FD1800D00FD5 /* RickMortyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1B24C82AD9FD1800D00FD5 /* RickMortyUI.framework */; };
 		DC1B24D52AD9FD1800D00FD5 /* RickMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B24D42AD9FD1800D00FD5 /* RickMortyUITests.swift */; };
 		DC1B24D62AD9FD1800D00FD5 /* RickMortyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC4231FE2ADF5C6500D3A0A5 /* CharacterItemCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */; };
+		DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4232002ADF5C9D00D3A0A5 /* CharacterItemCell.swift */; };
 		DC7296002ADEAB34003B4B94 /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
 		DC84962C2ACF58B200785301 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; };
 		DC8496312ACF58B200785301 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496302ACF58B200785301 /* NetworkClientTests.swift */; };
@@ -86,6 +88,8 @@
 		DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickMortyUI.h; sourceTree = "<group>"; };
 		DC1B24CF2AD9FD1800D00FD5 /* RickMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1B24D42AD9FD1800D00FD5 /* RickMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyUITests.swift; sourceTree = "<group>"; };
+		DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCellController.swift; sourceTree = "<group>"; };
+		DC4232002ADF5C9D00D3A0A5 /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
 		DC8496242ACF58B200785301 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8496262ACF58B200785301 /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		DC84962B2ACF58B200785301 /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,8 @@
 		DC1B24C92AD9FD1800D00FD5 /* RickMortyUI */ = {
 			isa = PBXGroup;
 			children = (
+				DC4231FF2ADF5C8400D3A0A5 /* Components */,
+				DC4231FC2ADF5C3D00D3A0A5 /* Controllers */,
 				DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */,
 				DC8FAC752ADEA3DE001F46E8 /* CharacterListViewController.swift */,
 			);
@@ -169,6 +175,22 @@
 				DC1B24D42AD9FD1800D00FD5 /* RickMortyUITests.swift */,
 			);
 			path = RickMortyUITests;
+			sourceTree = "<group>";
+		};
+		DC4231FC2ADF5C3D00D3A0A5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC4231FF2ADF5C8400D3A0A5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC4232002ADF5C9D00D3A0A5 /* CharacterItemCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DC8495FD2ACF580700785301 = {
@@ -498,6 +520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4231FE2ADF5C6500D3A0A5 /* CharacterItemCellController.swift in Sources */,
+				DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */,
 				DC8FAC762ADEA3DE001F46E8 /* CharacterListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
