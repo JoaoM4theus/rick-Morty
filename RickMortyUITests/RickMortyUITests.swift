@@ -17,6 +17,14 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(service.loadCount, 0)
         XCTAssertTrue(sut.characterCollection.isEmpty)
     }
+    
+    func test_viewDidLoad_should_be_called_service() {
+        let (sut, service) = makeSUT()
+
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(service.loadCount, 1)
+    }
 
     private func makeSUT(
         file: StaticString = #filePath,
