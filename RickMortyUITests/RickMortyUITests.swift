@@ -12,12 +12,24 @@ import RickMortyDomain
 final class RickMortyUITests: XCTestCase {
 
     func test_init_does_not_load() {
-        let sut = CharacterListViewController()
-        let service = CharacterLoaderSpy()
+        let (sut, service) = makeSUT()
 
         XCTAssertEqual(service.loadCount, 0)
+        XCTAssertTrue(sut.characterCollection.isEmpty)
     }
 
+    private func makeSUT(
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (sut: CharacterListViewController, service: CharacterLoaderSpy) {
+        let service = CharacterLoaderSpy()
+        let sut = CharacterListCompose.compose(service: service) as! CharacterListViewController
+
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(service, file: file, line: line)
+
+        return (sut, service)
+    }
 }
 
 final class CharacterLoaderSpy: RickMortyLoader {
