@@ -10,14 +10,24 @@ import UIKit
 class CharacterListViewController: UITableViewController {
 
     public private(set) var characterCollection: [CharacterItemCellController] = []
+    private let interactor: CharacterListInteractorInput
     
+    init(interactor: CharacterListInteractorInput) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        nil
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CharacterItemCell.self, forCellReuseIdentifier: CharacterItemCell.identifier)
+        interactor.loadService()
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characterCollection.count
     }
@@ -33,4 +43,21 @@ class CharacterListViewController: UITableViewController {
         return cell
     }
 
+}
+
+extension CharacterListViewController: CharacterListPresenterOutput {
+    func onLoadingChange(_ isLoading: Bool) {
+        if isLoading {
+            refreshControl?.beginRefreshing()
+            return
+        }
+        refreshControl?.endRefreshing()
+    }
+    
+    func onRestaurantItemCell(_ items: [CharacterItemCellController]) {
+        characterCollection = items
+        tableView.reloadData()
+    }
+    
+    
 }

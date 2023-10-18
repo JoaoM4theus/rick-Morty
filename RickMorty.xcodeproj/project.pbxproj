@@ -29,6 +29,10 @@
 		DCB4DE9F2AD1AF930047217F /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
 		DCB4DEA42AD1AFDE0047217F /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
+		DCE4F6F02AE0998B00F3BDA2 /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */; };
+		DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */; };
+		DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */; };
+		DCE4F6F52AE0A32100F3BDA2 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,9 @@
 		DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDomainTests.swift; sourceTree = "<group>"; };
 		DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyLoader.swift; sourceTree = "<group>"; };
 		DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterLoader.swift; sourceTree = "<group>"; };
+		DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
+		DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
+		DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCompose.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +168,8 @@
 		DC1B24C92AD9FD1800D00FD5 /* RickMortyUI */ = {
 			isa = PBXGroup;
 			children = (
-				DC4231FF2ADF5C8400D3A0A5 /* Components */,
-				DC4231FC2ADF5C3D00D3A0A5 /* Controllers */,
+				DCE4F6EE2AE0996800F3BDA2 /* Character */,
 				DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */,
-				DC8FAC752ADEA3DE001F46E8 /* CharacterListViewController.swift */,
 			);
 			path = RickMortyUI;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		DC4231FC2ADF5C3D00D3A0A5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC8FAC752ADEA3DE001F46E8 /* CharacterListViewController.swift */,
 				DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */,
 			);
 			path = Controllers;
@@ -279,6 +285,26 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCE4F6ED2AE0995F00F3BDA2 /* VIP */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */,
+				DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */,
+			);
+			path = VIP;
+			sourceTree = "<group>";
+		};
+		DCE4F6EE2AE0996800F3BDA2 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4F6ED2AE0995F00F3BDA2 /* VIP */,
+				DC4231FF2ADF5C8400D3A0A5 /* Components */,
+				DC4231FC2ADF5C3D00D3A0A5 /* Controllers */,
+				DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,8 +546,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE4F6F02AE0998B00F3BDA2 /* CharacterListInteractor.swift in Sources */,
+				DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */,
 				DC4231FE2ADF5C6500D3A0A5 /* CharacterItemCellController.swift in Sources */,
 				DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */,
+				DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */,
 				DC8FAC762ADEA3DE001F46E8 /* CharacterListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE4F6F52AE0A32100F3BDA2 /* XCTestCase+Helper.swift in Sources */,
 				DC1B24D52AD9FD1800D00FD5 /* RickMortyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
