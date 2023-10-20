@@ -85,6 +85,15 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(sut.isShowLoadingIndicator, false)
     }
     
+    func test_pullToRefresh_should_be_show_loading_indicator() {
+        let (sut, _) = makeSUT()
+        
+        sut.simulatePullToRefresh()
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, true)
+    }
+    
+    
     private func makeSUT(
         file: StaticString = #filePath,
         line: UInt = #line
