@@ -59,6 +59,14 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(service.methodsCalled, [.load, .load, .load, .load])
     }
 
+    func test_viewDidLoad_show_loading_indicator() {
+        let (sut, _) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, true)
+    }
+    
     private func makeSUT(
         file: StaticString = #filePath,
         line: UInt = #line
