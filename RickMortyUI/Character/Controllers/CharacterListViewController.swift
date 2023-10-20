@@ -23,6 +23,8 @@ class CharacterListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.register(CharacterItemCell.self, forCellReuseIdentifier: CharacterItemCell.identifier)
         interactor.loadService()
     }
@@ -41,6 +43,10 @@ class CharacterListViewController: UITableViewController {
         }
         characterCollection[indexPath.row].renderCell(cell)
         return cell
+    }
+
+    @objc func refresh() {
+        interactor.loadService()
     }
 
 }
