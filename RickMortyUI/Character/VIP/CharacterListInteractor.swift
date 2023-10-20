@@ -13,7 +13,6 @@ protocol CharacterListInteractorInput {
 }
 
 final class CharacterListInteractor<Service: RickMortyLoader>: CharacterListInteractorInput where Service.T == Result<[Character], RickMortyResultError> {
-    public typealias T = Result<[Character], RickMortyResultError>
     
     private let service: Service
     private let presenter: CharacterListPresenterInput

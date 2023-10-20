@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import RickMortyDomain
 
 extension XCTestCase {
 
@@ -13,6 +14,24 @@ extension XCTestCase {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "The instance it should be deallocated, possible memory leak", file: file, line: line)
         }
+    }
+
+    func makeCharacter() -> Character {
+        Character(
+            id: UUID(),
+            name: "name",
+            status: "status",
+            species: "species",
+            gender: "gender",
+            origin: Origin(name: "name",
+                           url: "url"),
+            location: Location(name: "name",
+                               url: "url"),
+            image: "image",
+            episodes: [],
+            url: "url",
+            created: "url"
+        )
     }
 
 }
