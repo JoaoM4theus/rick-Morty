@@ -67,6 +67,24 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(sut.isShowLoadingIndicator, true)
     }
     
+    func test_load_when_completion_failure_should_be_hide_loading_indicator() {
+        let (sut, service) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        service.completionSuccess(.failure(.withoutConnectivity))
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+    }
+    
+    func test_load_when_completion_success_should_be_hide_loading_indicator() {
+        let (sut, service) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        service.completionSuccess(.success([makeCharacter()]))
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+    }
+    
     private func makeSUT(
         file: StaticString = #filePath,
         line: UInt = #line
