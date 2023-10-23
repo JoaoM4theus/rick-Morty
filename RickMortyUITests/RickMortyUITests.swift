@@ -93,6 +93,37 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(sut.isShowLoadingIndicator, true)
     }
     
+    func test_pullToRefresh_should_be_hide_loading_indicator_when_completion_is_failure() {
+        let (sut, service) = makeSUT()
+        
+        sut.simulatePullToRefresh()
+        service.completionSuccess(.failure(.withoutConnectivity))
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+    }
+    
+    func test_pullToRefresh_should_be_hide_loading_indicator_when_completion_is_success() {
+        let (sut, service) = makeSUT()
+        
+        sut.simulatePullToRefresh()
+        service.completionSuccess(.success([makeCharacter()]))
+        
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+    }
+    
+    func test_show_loading_indicator_for_all_life_cycle_view() {
+        let (sut, service) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.isShowLoadingIndicator, true)
+        service.completionSuccess(.failure(.withoutConnectivity))
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+        
+        sut.simulatePullToRefresh()
+        XCTAssertEqual(sut.isShowLoadingIndicator, true)
+        service.completionSuccess(.success([makeCharacter()]))
+        XCTAssertEqual(sut.isShowLoadingIndicator, false)
+    }
     
     private func makeSUT(
         file: StaticString = #filePath,
