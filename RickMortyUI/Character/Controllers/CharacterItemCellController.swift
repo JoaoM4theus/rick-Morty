@@ -18,9 +18,9 @@ final class CharacterItemCellController {
     
     func renderCell(_ cell: CharacterItemCell) {
         cell.name.text = model.name
-        cell.status.text = model.status
-        cell.species.text = model.species
-        cell.gender.text = model.gender
+        cell.status.text = model.statusToString
+        cell.species.text = model.specieToString
+        cell.gender.text = model.genderToString
         cell.location.text = model.location.name
     }
 

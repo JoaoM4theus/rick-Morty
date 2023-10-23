@@ -125,6 +125,24 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(sut.isShowLoadingIndicator, false)
     }
     
+    func test_render_all_character_information_in_view() {
+        let (sut, service) = makeSUT()
+        let item = makeCharacter()
+        
+        sut.loadViewIfNeeded()
+        service.completionSuccess(.success([item]))
+        
+        XCTAssertEqual(sut.numberOfRows(), 1)
+        
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? CharacterItemCell
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.name.text, item.name)
+        XCTAssertEqual(cell?.status.text, "Status: \(item.status)")
+        XCTAssertEqual(cell?.species.text, "Specie: \(item.species)")
+        XCTAssertEqual(cell?.gender.text, "Gender: \(item.gender)")
+        XCTAssertEqual(cell?.location.text, item.location.name)
+    }
+    
     private func makeSUT(
         file: StaticString = #filePath,
         line: UInt = #line
