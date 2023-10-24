@@ -12,7 +12,7 @@ import NetworkClient
 final class CharacterDomainTests: XCTestCase {
     typealias ResultType = Result<[Character], RickMortyResultError>
 
-    func test_initializer_remoteRestaurantLoader_and_validate_urlRequest() {
+    func test_initializer_remoteCharacterLoader_and_validate_urlRequest() {
         let (sut, spy, anyUrl) = makeSUT()
         
         sut.load { _ in }

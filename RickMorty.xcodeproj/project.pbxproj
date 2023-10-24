@@ -33,6 +33,7 @@
 		DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */; };
 		DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */; };
 		DCE4F6F52AE0A32100F3BDA2 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
+		DCFECDDF2AE7364B00979603 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
 		DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCompose.swift; sourceTree = "<group>"; };
+		DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		DC1B24C92AD9FD1800D00FD5 /* RickMortyUI */ = {
 			isa = PBXGroup;
 			children = (
+				DCFECDDD2AE7363700979603 /* Helpers */,
 				DCE4F6EE2AE0996800F3BDA2 /* Character */,
 				DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */,
 			);
@@ -305,6 +308,14 @@
 				DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */,
 			);
 			path = Character;
+			sourceTree = "<group>";
+		};
+		DCFECDDD2AE7363700979603 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE4F6F02AE0998B00F3BDA2 /* CharacterListInteractor.swift in Sources */,
+				DCFECDDF2AE7364B00979603 /* MainQueueDispatchDecorator.swift in Sources */,
 				DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */,
 				DC4231FE2ADF5C6500D3A0A5 /* CharacterItemCellController.swift in Sources */,
 				DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */,
@@ -948,8 +960,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.NetworkClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -965,8 +981,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.NetworkClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1057,8 +1077,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1074,8 +1098,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RickMorty.RickMortyDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

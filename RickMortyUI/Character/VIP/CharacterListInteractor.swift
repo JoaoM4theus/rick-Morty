@@ -12,12 +12,12 @@ protocol CharacterListInteractorInput {
     func loadService()
 }
 
-final class CharacterListInteractor<Service: RickMortyLoader>: CharacterListInteractorInput where Service.T == Result<[Character], RickMortyResultError> {
+final class CharacterListInteractor: CharacterListInteractorInput {
     
-    private let service: Service
+    private let service: CharacterLoader
     private let presenter: CharacterListPresenterInput
     
-    init(service: Service, presenter: CharacterListPresenterInput) {
+    init(service: CharacterLoader, presenter: CharacterListPresenterInput) {
         self.service = service
         self.presenter = presenter
     }
@@ -27,7 +27,7 @@ final class CharacterListInteractor<Service: RickMortyLoader>: CharacterListInte
         service.load { [weak presenter] result in
             switch result {
             case let .success(items):
-                presenter?.onRestaurantItem(items)
+                presenter?.onCharacterItem(items)
             default: break
             }
             presenter?.onLoadingChange(false)

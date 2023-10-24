@@ -60,10 +60,9 @@ extension CharacterListViewController: CharacterListPresenterOutput {
         refreshControl?.endRefreshing()
     }
     
-    func onRestaurantItemCell(_ items: [CharacterItemCellController]) {
+    func onCharacterItemCell(_ items: [CharacterItemCellController]) {
         characterCollection = items
         tableView.reloadData()
     }
-    
-    
+
 }

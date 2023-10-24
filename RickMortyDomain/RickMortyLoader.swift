@@ -12,7 +12,8 @@ public enum RickMortyResultError: Swift.Error {
     case invalidData
 }
 
-public protocol RickMortyLoader {
-    associatedtype T
-    func load(completion: @escaping (T) -> Void)
+public protocol CharacterLoader {
+    typealias CharacterResult = Result<[Character], RickMortyResultError>
+    func load(completion: @escaping (CharacterLoader.CharacterResult) -> Void)
 }
+

@@ -9,12 +9,12 @@ import RickMortyDomain
 
 protocol CharacterListPresenterInput: AnyObject {
     func onLoadingChange(_ isLoading: Bool)
-    func onRestaurantItem(_ items: [Character])
+    func onCharacterItem(_ items: [Character])
 }
 
 protocol CharacterListPresenterOutput: AnyObject {
     func onLoadingChange(_ isLoading: Bool)
-    func onRestaurantItemCell(_ items: [CharacterItemCellController])
+    func onCharacterItemCell(_ items: [CharacterItemCellController])
 }
 
 final class CharacterListPresenter: CharacterListPresenterInput {
@@ -25,9 +25,9 @@ final class CharacterListPresenter: CharacterListPresenterInput {
         view?.onLoadingChange(isLoading)
     }
     
-    func onRestaurantItem(_ items: [Character]) {
+    func onCharacterItem(_ items: [Character]) {
         let cells = items.map { CharacterItemCellController(model: $0) }
-        view?.onRestaurantItemCell(cells)
+        view?.onCharacterItemCell(cells)
     }
 
 }

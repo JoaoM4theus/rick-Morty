@@ -36,7 +36,7 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(sut.characterCollection.count, 1)
     }
 
-    func test_load_returned_restaurantItems_data_and_restaurantCollection_is_empty() {
+    func test_load_returned_characterItems_data_and_characterCollection_is_empty() {
         let (sut, service) = makeSUT()
         
         sut.loadViewIfNeeded()
@@ -143,6 +143,20 @@ final class RickMortyUITests: XCTestCase {
         XCTAssertEqual(cell?.location.text, item.location.name)
     }
     
+    func test_load_completion_dispatches_in_background_threads() {
+        let (sut, service) = makeSUT()
+        let items = [makeCharacter()]
+        
+        sut.loadViewIfNeeded()
+        
+        let exp = expectation(description: "waiting return code")
+        DispatchQueue.global().async {
+            service.completionSuccess(.success(items))
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     private func makeSUT(
         file: StaticString = #filePath,
         line: UInt = #line
@@ -157,13 +171,12 @@ final class RickMortyUITests: XCTestCase {
     }
 }
 
-final class CharacterLoaderSpy: RickMortyLoader {
+final class CharacterLoaderSpy: CharacterLoader {
     
     enum Methods {
         case load
     }
 
-    typealias T = Result<[Character], RickMortyResultError>
     private(set) var methodsCalled: [Methods] = []
 
     private var completionHandler: ((Result<[Character], RickMortyResultError>) -> Void)?

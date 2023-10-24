@@ -37,8 +37,7 @@ public struct CharacterRoot: Decodable {
     let results: [Character]
 }
 
-public final class RemoteCharacterLoader: RickMortyLoader {
-    public typealias T = Result<[Character], RickMortyResultError>
+public final class RemoteCharacterLoader: CharacterLoader {
 
     let networkClient: NetworkClient
     let fromUrl: URL
@@ -49,7 +48,7 @@ public final class RemoteCharacterLoader: RickMortyLoader {
         self.fromUrl = fromUrl
     }
 
-    private func successfullyValidation(_ data: Data, response: HTTPURLResponse) -> T {
+    private func successfullyValidation(_ data: Data, response: HTTPURLResponse) -> CharacterLoader.CharacterResult {
         guard let json = try? JSONDecoder().decode(CharacterRoot.self, from: data),
               response.statusCode == okResponse else {
             return .failure(.invalidData)
@@ -57,7 +56,7 @@ public final class RemoteCharacterLoader: RickMortyLoader {
         return .success(json.results)
     }
     
-    public func load(completion: @escaping (Result<[Character], RickMortyResultError>) -> Void) {
+    public func load(completion: @escaping (CharacterLoader.CharacterResult) -> Void) {
         networkClient.request(from: fromUrl) { [weak self] result in
             guard let self else { return }
             switch result {

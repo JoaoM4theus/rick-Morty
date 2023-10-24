@@ -8,12 +8,25 @@
 import UIKit
 import RickMortyDomain
 
-public final class CharacterListCompose<Service: RickMortyLoader> where Service.T == Result<[Character], RickMortyResultError> {
-    public static func compose(service: Service) -> UITableViewController {
+public final class CharacterListCompose {
+    public static func compose(service: CharacterLoader) -> UITableViewController {
+        let decorator = MainQueueDispatchDecorator(decorate: service)
         let presenter = CharacterListPresenter()
-        let interactor = CharacterListInteractor(service: service, presenter: presenter)
+        let interactor = CharacterListInteractor(service: decorator, presenter: presenter)
         let controller = CharacterListViewController(interactor: interactor)
         presenter.view = controller
         return controller
     }
+}
+
+extension MainQueueDispatchDecorator: CharacterLoader where T == CharacterLoader{
+    
+    func load(completion: @escaping (CharacterLoader.CharacterResult) -> Void) {
+        decorate.load { [weak self] result in
+            self?.dispatch {
+                completion(result)
+            }
+        }
+    }
+
 }
