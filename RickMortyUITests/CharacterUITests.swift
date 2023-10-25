@@ -1,6 +1,6 @@
 //
-//  RickMortyUITests.swift
-//  RickMortyUITests
+//  CharacterUITests.swift
+//  CharacterUITests
 //
 //  Created by Joao Matheus on 13/10/23.
 //
@@ -9,7 +9,7 @@ import XCTest
 import RickMortyDomain
 @testable import RickMortyUI
 
-final class RickMortyUITests: XCTestCase {
+final class CharacterUITests: XCTestCase {
 
     func test_init_does_not_load() {
         let (sut, service) = makeSUT()
