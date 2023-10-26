@@ -32,14 +32,11 @@ extension UITableViewCell {
 class CharacterItemCell: UITableViewCell {
 
     private(set) lazy var hStack = renderStack(axis: .horizontal, spacing: 8, alignment: .center)
-    private(set) lazy var vStack = renderStack(axis: .vertical, spacing: 8, alignment: .leading)
+    private(set) lazy var vStack = renderStack(axis: .vertical, spacing: 2, alignment: .leading)
     private(set) lazy var characterImage = renderImage()
     private(set) lazy var name = renderLabel(font: .preferredFont(forTextStyle: .body))
-    private(set) lazy var status = renderLabel(font: .preferredFont(forTextStyle: .body))
-    private(set) lazy var species = renderLabel(font: .preferredFont(forTextStyle: .body))
-    private(set) lazy var gender = renderLabel(font: .preferredFont(forTextStyle: .body))
-    private(set) lazy var location = renderLabel(font: .preferredFont(forTextStyle: .body))
-    private(set) lazy var disclosureIndicator = renderImage()
+    private(set) lazy var moreInfo = renderLabel(font: .preferredFont(forTextStyle: .body))
+    private(set) lazy var disclosureIndicator = renderSystemImage(name: "arrow.right.to.line")
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,14 +63,19 @@ class CharacterItemCell: UITableViewCell {
         return stack
     }
 
-    private func renderImage() -> UIImageView {
+    private func renderSystemImage(name: String?) -> UIImageView {
         let imageView = UIImageView()
-//        imageView.image = UIImage(systemName: systemImage)
-        imageView.backgroundColor = .blue
+        imageView.image = UIImage(systemName: name ?? "")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = UIColor.gray
         return imageView
     }
 
+    private func renderImage() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }
 }
 
 extension CharacterItemCell: ViewCodeHelper {
@@ -87,10 +89,7 @@ extension CharacterItemCell: ViewCodeHelper {
         hStack.addArrangedSubview(characterImage)
         hStack.addArrangedSubview(vStack)
         vStack.addArrangedSubview(name)
-        vStack.addArrangedSubview(location)
-        vStack.addArrangedSubview(status)
-        vStack.addArrangedSubview(species)
-        vStack.addArrangedSubview(gender)
+        vStack.addArrangedSubview(moreInfo)
         hStack.addArrangedSubview(disclosureIndicator)
     }
     
@@ -102,7 +101,8 @@ extension CharacterItemCell: ViewCodeHelper {
             hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin)
         ])
         NSLayoutConstraint.activate([
-            characterImage.widthAnchor.constraint(equalToConstant: 150)
+            characterImage.widthAnchor.constraint(equalToConstant: 60),
+            characterImage.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 

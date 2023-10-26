@@ -5,11 +5,10 @@
 //  Created by Joao Matheus on 07/10/23.
 //
 
-import Foundation
 import NetworkClient
 
-public struct Character: Decodable, Equatable {
-    public let id: UUID
+public struct Character: Codable, Equatable {
+    public let id: Int
     public let name: String
     public let status: String
     public let species: String
@@ -17,23 +16,22 @@ public struct Character: Decodable, Equatable {
     public let origin: Origin
     public let location: Location
     public let image: String
-    public let episodes: [String]
+    public let episode: [String]
     public let url: String
     public let created: String
 }
 
-public struct Origin: Decodable, Equatable {
+public struct Origin: Codable, Equatable {
     let name: String
     let url: String
 }
 
-public struct Location: Decodable, Equatable {
+public struct Location: Codable, Equatable {
     public let name: String
     public let url: String
 }
 
-
-public struct CharacterRoot: Decodable {
+public struct CharacterRoot: Codable {
     let results: [Character]
 }
 
@@ -43,7 +41,7 @@ public final class RemoteCharacterLoader: CharacterLoader {
     let fromUrl: URL
     let okResponse: Int = 200
 
-    init(networkClient: NetworkClient, fromUrl: URL) {
+    public init(networkClient: NetworkClient, fromUrl: URL) {
         self.networkClient = networkClient
         self.fromUrl = fromUrl
     }

@@ -18,10 +18,14 @@ final class CharacterItemCellController {
     
     func renderCell(_ cell: CharacterItemCell) {
         cell.name.text = model.name
-        cell.status.text = model.statusToString
-        cell.species.text = model.specieToString
-        cell.gender.text = model.genderToString
-        cell.location.text = model.location.name
+        cell.moreInfo.text = "More info..."
+        if let url = URL(string: model.image) {
+            cell.characterImage.downloadImage(from: url) { image in
+                cell.characterImage.image = image
+                cell.characterImage.layer.cornerRadius = cell.characterImage.frame.width / 2
+                cell.characterImage.clipsToBounds = true
+            }
+        }
     }
 
 }

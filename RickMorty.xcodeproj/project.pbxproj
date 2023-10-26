@@ -36,6 +36,13 @@
 		DCD9AF7E2AE9E34C00838A03 /* WubbaLubbaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9AF7D2AE9E34C00838A03 /* WubbaLubbaTests.swift */; };
 		DCD9AF882AE9E34C00838A03 /* WubbaLubbaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9AF872AE9E34C00838A03 /* WubbaLubbaUITests.swift */; };
 		DCD9AF8A2AE9E34C00838A03 /* WubbaLubbaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9AF892AE9E34C00838A03 /* WubbaLubbaUITestsLaunchTests.swift */; };
+		DCD9AF942AE9E42400838A03 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; };
+		DCD9AF952AE9E42400838A03 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCD9AF992AE9E42900838A03 /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
+		DCD9AF9A2AE9E42900838A03 /* RickMortyDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCD9AF9D2AE9E42D00838A03 /* RickMortyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1B24C82AD9FD1800D00FD5 /* RickMortyUI.framework */; };
+		DCD9AF9E2AE9E42D00838A03 /* RickMortyUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC1B24C82AD9FD1800D00FD5 /* RickMortyUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCD9AFA22AE9EE3500838A03 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9AFA12AE9EE3500838A03 /* UIImageExtension.swift */; };
 		DCE4F6F02AE0998B00F3BDA2 /* CharacterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */; };
 		DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */; };
 		DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */; };
@@ -93,6 +100,27 @@
 			remoteGlobalIDString = DCD9AF632AE9E34900838A03;
 			remoteInfo = WubbaLubba;
 		};
+		DCD9AF962AE9E42400838A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8495FE2ACF580700785301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC8496232ACF58B200785301;
+			remoteInfo = NetworkClient;
+		};
+		DCD9AF9B2AE9E42900838A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8495FE2ACF580700785301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCB4DE822AD1AA660047217F;
+			remoteInfo = RickMortyDomain;
+		};
+		DCD9AF9F2AE9E42D00838A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8495FE2ACF580700785301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC1B24C72AD9FD1800D00FD5;
+			remoteInfo = RickMortyUI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,6 +131,19 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DCB4DE9F2AD1AF930047217F /* NetworkClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD9AF982AE9E42400838A03 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DCD9AF952AE9E42400838A03 /* NetworkClient.framework in Embed Frameworks */,
+				DCD9AF9A2AE9E42900838A03 /* RickMortyDomain.framework in Embed Frameworks */,
+				DCD9AF9E2AE9E42D00838A03 /* RickMortyUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +183,7 @@
 		DCD9AF832AE9E34C00838A03 /* WubbaLubbaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WubbaLubbaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD9AF872AE9E34C00838A03 /* WubbaLubbaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WubbaLubbaUITests.swift; sourceTree = "<group>"; };
 		DCD9AF892AE9E34C00838A03 /* WubbaLubbaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WubbaLubbaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DCD9AFA12AE9EE3500838A03 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
 		DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCompose.swift; sourceTree = "<group>"; };
@@ -200,6 +242,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD9AF942AE9E42400838A03 /* NetworkClient.framework in Frameworks */,
+				DCD9AF992AE9E42900838A03 /* RickMortyDomain.framework in Frameworks */,
+				DCD9AF9D2AE9E42D00838A03 /* RickMortyUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */,
+				DCD9AFA12AE9EE3500838A03 /* UIImageExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -553,10 +599,14 @@
 				DCD9AF602AE9E34900838A03 /* Sources */,
 				DCD9AF612AE9E34900838A03 /* Frameworks */,
 				DCD9AF622AE9E34900838A03 /* Resources */,
+				DCD9AF982AE9E42400838A03 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DCD9AF972AE9E42400838A03 /* PBXTargetDependency */,
+				DCD9AF9C2AE9E42900838A03 /* PBXTargetDependency */,
+				DCD9AFA02AE9E42D00838A03 /* PBXTargetDependency */,
 			);
 			name = WubbaLubba;
 			productName = WubbaLubba;
@@ -742,6 +792,7 @@
 				DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */,
 				DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */,
 				DC8FAC762ADEA3DE001F46E8 /* CharacterListViewController.swift in Sources */,
+				DCD9AFA22AE9EE3500838A03 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +905,21 @@
 			isa = PBXTargetDependency;
 			target = DCD9AF632AE9E34900838A03 /* WubbaLubba */;
 			targetProxy = DCD9AF842AE9E34C00838A03 /* PBXContainerItemProxy */;
+		};
+		DCD9AF972AE9E42400838A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC8496232ACF58B200785301 /* NetworkClient */;
+			targetProxy = DCD9AF962AE9E42400838A03 /* PBXContainerItemProxy */;
+		};
+		DCD9AF9C2AE9E42900838A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCB4DE822AD1AA660047217F /* RickMortyDomain */;
+			targetProxy = DCD9AF9B2AE9E42900838A03 /* PBXContainerItemProxy */;
+		};
+		DCD9AFA02AE9E42D00838A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC1B24C72AD9FD1800D00FD5 /* RickMortyUI */;
+			targetProxy = DCD9AF9F2AE9E42D00838A03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
