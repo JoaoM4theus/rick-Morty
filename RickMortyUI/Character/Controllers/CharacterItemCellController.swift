@@ -20,11 +20,11 @@ final class CharacterItemCellController {
         cell.name.text = model.name
         cell.moreInfo.text = "More info..."
         if let url = URL(string: model.image) {
-            cell.characterImage.downloadImage(from: url) { image in
-                cell.characterImage.image = image
-                cell.characterImage.layer.cornerRadius = cell.characterImage.frame.width / 2
-                cell.characterImage.clipsToBounds = true
-            }
+//            cell.characterImage.downloadImage(from: url) { image in
+//                cell.characterImage.image = image
+//                cell.characterImage.layer.cornerRadius = cell.characterImage.frame.width / 2
+//                cell.characterImage.clipsToBounds = true
+//            }
         }
     }
 
@@ -43,5 +43,6 @@ private extension Character {
     var genderToString: String {
         return "Gender: \(gender)"
     }
+    
     
 }

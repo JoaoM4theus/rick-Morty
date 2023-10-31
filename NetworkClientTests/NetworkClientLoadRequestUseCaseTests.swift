@@ -8,7 +8,7 @@
 import XCTest
 import NetworkClient
 
-final class NetworkClientTests: XCTestCase {
+final class NetworkClientLoadRequestUseCaseTests: XCTestCase {
 
     func test_loadRequest_resume_dataTask_with_url() {
         let (sut, session) = makeSUT()
@@ -20,7 +20,7 @@ final class NetworkClientTests: XCTestCase {
 
         XCTAssertEqual(task.resumeCount, 1)
     }
-
+    
     func test_loadRequest_and_completion_with_error_for_invalidCases() {
         let url = URL(string: "https://rickandmortyapi.com/")!
         let anyError = NSError(domain: "Any error", code: -1)
@@ -95,8 +95,8 @@ final class NetworkClientTests: XCTestCase {
         return nil
     }
 
-    private func makeSUT(file: StaticString = #filePath,
-                         line: UInt = #line) -> (sut: NetworkClient, session: URLSessionSpy) {
+    func makeSUT(file: StaticString = #filePath,
+                 line: UInt = #line) -> (sut: NetworkClient, session: URLSessionSpy) {
         let session = URLSessionSpy()
         let sut = NetworkService(session: session)
         trackForMemoryLeaks(session)

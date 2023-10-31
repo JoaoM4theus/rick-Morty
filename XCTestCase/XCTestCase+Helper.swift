@@ -18,7 +18,7 @@ extension XCTestCase {
 
     func makeCharacter() -> Character {
         Character(
-            id: UUID(),
+            id: .zero,
             name: "name",
             status: "status",
             species: "species",
@@ -28,7 +28,7 @@ extension XCTestCase {
             location: Location(name: "name",
                                url: "url"),
             image: "image",
-            episodes: [],
+            episode: [],
             url: "url",
             created: "url"
         )

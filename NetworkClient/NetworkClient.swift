@@ -10,6 +10,7 @@ import Foundation
 public protocol NetworkClient {
     typealias NetworkResult = Result<(Data, HTTPURLResponse), Error>
     func request(from url: URL, completion: @escaping (NetworkResult) -> Void)
+    func downloadImage(from url: URL, completion: @escaping (Data?) -> Void)
 }
 
 public final class NetworkService: NetworkClient {
@@ -32,6 +33,23 @@ public final class NetworkService: NetworkClient {
             }
             let error = NSError(domain: "Unexpected values", code: -1)
             completion(.failure(error))
+        }.resume()
+    }
+
+    public func downloadImage(from url: URL, completion: @escaping (Data?) -> Void) {
+        session.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completion(nil)
+                return
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    completion(data)
+                }
+            } else {
+                completion(nil)
+            }
         }.resume()
     }
 
