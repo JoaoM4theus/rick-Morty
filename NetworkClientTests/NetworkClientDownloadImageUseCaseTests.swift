@@ -33,6 +33,14 @@ final class NetworkClientDownloadImageUseCaseTests: XCTestCase {
         XCTAssertEqual(result as? NSError, anyError)
     }
 
+    func test_downloadImage_and_completion_with_success_for_validCases() {
+        let data = Data()
+        
+        let result = resultErrorForValidCases(data: data, error: nil)
+        
+        XCTAssertEqual(result, data)
+    }
+
     func makeSUT(file: StaticString = #filePath,
                  line: UInt = #line) -> (sut: NetworkClient,
                                          session: URLSessionSpy) {
@@ -43,6 +51,23 @@ final class NetworkClientDownloadImageUseCaseTests: XCTestCase {
         return (sut, session)
     }
 
+    private func resultErrorForValidCases(
+        data: Data?,
+        error: Error?,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> Data? {
+
+        let result = assert(data: data, error: error)
+
+        switch result {
+        case let .success(data):
+            return data
+        default:
+            XCTFail("expected failure but returned \(String(describing: result))", file: file, line: line)
+        }
+        return nil
+    }
     private func resultErrorForInvalidCases(
         data: Data?,
         error: Error?,
