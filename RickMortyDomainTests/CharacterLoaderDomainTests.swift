@@ -9,7 +9,7 @@ import XCTest
 import NetworkClient
 @testable import RickMortyDomain
 
-final class CharacterDomainTests: XCTestCase {
+final class CharacterLoaderDomainTests: XCTestCase {
     typealias ResultType = Result<[Character], RickMortyResultError>
 
     func test_initializer_remoteCharacterLoader_and_validate_urlRequest() {
@@ -128,7 +128,7 @@ final class CharacterDomainTests: XCTestCase {
     }
 
     private func makeCharacter(
-        id: UUID = UUID(),
+        id: Int = .zero,
         name: String = "Rick Sanchez",
         status: String = "Alive",
         species: String = "Human",
@@ -155,7 +155,7 @@ final class CharacterDomainTests: XCTestCase {
             origin: origin,
             location: location,
             image: image,
-            episodes: episodes,
+            episode: episodes,
             url: url,
             created: created
         )
@@ -168,7 +168,7 @@ final class CharacterDomainTests: XCTestCase {
             "url": model.location.url
         ]
         let itemJson: [String: Any] = [
-            "id": model.id.uuidString,
+            "id": model.id,
             "name": model.name,
             "status": model.status,
             "species": model.species,
@@ -176,7 +176,7 @@ final class CharacterDomainTests: XCTestCase {
             "origin": origin,
             "location": location,
             "image": model.image,
-            "episodes": model.episodes,
+            "episode": model.episode,
             "url": model.url,
             "created": model.created
             
@@ -188,16 +188,20 @@ final class CharacterDomainTests: XCTestCase {
 final class NetworkClientSpy: NetworkClient {
 
     var urlRequest = [URL]()
-    private var completionHandler: ((NetworkResult) -> Void)?
+    private var completionRequestHandler: ((NetworkResult) -> Void)?
     
     func request(from url: URL,
                  completion: @escaping (NetworkResult) -> Void) {
         urlRequest.append(url)
-        completionHandler = completion
+        completionRequestHandler = completion
+    }
+
+    func downloadImage(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
+        urlRequest.append(url)
     }
 
     func completionWithError() {
-        completionHandler?(.failure(anyError()))
+        completionRequestHandler?(.failure(anyError()))
     }
     
     func completionWithSuccess(data: Data = Data(), statusCode: Int = 200) {
@@ -207,7 +211,7 @@ final class NetworkClientSpy: NetworkClient {
             httpVersion: nil,
             headerFields: nil
         )!
-        completionHandler?(.success((data, response)))
+        completionRequestHandler?(.success((data, response)))
     }
     
     private func anyError() -> Error {

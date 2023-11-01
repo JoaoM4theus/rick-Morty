@@ -17,3 +17,6 @@ public protocol CharacterLoader {
     func load(completion: @escaping (CharacterLoader.CharacterResult) -> Void)
 }
 
+public protocol CharacterDownloadImage {
+    func downloadImage(fromUrl: URL, completion: @escaping (Result<Data, Error>) -> Void)
+}

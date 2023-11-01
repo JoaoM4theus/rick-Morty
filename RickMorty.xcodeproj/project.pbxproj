@@ -11,6 +11,8 @@
 		DC1B24D62AD9FD1800D00FD5 /* RickMortyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1B24CA2AD9FD1800D00FD5 /* RickMortyUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC4231FE2ADF5C6500D3A0A5 /* CharacterItemCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */; };
 		DC4232012ADF5C9D00D3A0A5 /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4232002ADF5C9D00D3A0A5 /* CharacterItemCell.swift */; };
+		DC43E5A32AF1F1CD00C06D51 /* CharacterDownloadImageDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43E5A22AF1F1CD00C06D51 /* CharacterDownloadImageDomainTests.swift */; };
+		DC43E5A62AF1F28F00C06D51 /* RemoteCharacterDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43E5A52AF1F28F00C06D51 /* RemoteCharacterDownloadImage.swift */; };
 		DC7296002ADEAB34003B4B94 /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
 		DC84962C2ACF58B200785301 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8496242ACF58B200785301 /* NetworkClient.framework */; };
 		DC8496312ACF58B200785301 /* NetworkClientLoadRequestUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8496302ACF58B200785301 /* NetworkClientLoadRequestUseCaseTests.swift */; };
@@ -20,7 +22,7 @@
 		DCB4DE7B2AD1A96A0047217F /* URLSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7A2AD1A96A0047217F /* URLSessionSpy.swift */; };
 		DCB4DE7D2AD1A9890047217F /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE7C2AD1A9890047217F /* URLSessionDataTaskSpy.swift */; };
 		DCB4DE8B2AD1AA660047217F /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */; };
-		DCB4DE902AD1AA660047217F /* CharacterDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */; };
+		DCB4DE902AD1AA660047217F /* CharacterLoaderDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE8F2AD1AA660047217F /* CharacterLoaderDomainTests.swift */; };
 		DCB4DE912AD1AA660047217F /* RickMortyDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB4DE852AD1AA660047217F /* RickMortyDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */; };
 		DCB4DE9C2AD1ADF90047217F /* RemoteCharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */; };
@@ -157,6 +159,8 @@
 		DC1B24CF2AD9FD1800D00FD5 /* RickMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4231FD2ADF5C6500D3A0A5 /* CharacterItemCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCellController.swift; sourceTree = "<group>"; };
 		DC4232002ADF5C9D00D3A0A5 /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
+		DC43E5A22AF1F1CD00C06D51 /* CharacterDownloadImageDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDownloadImageDomainTests.swift; sourceTree = "<group>"; };
+		DC43E5A52AF1F28F00C06D51 /* RemoteCharacterDownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterDownloadImage.swift; sourceTree = "<group>"; };
 		DC8496242ACF58B200785301 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8496262ACF58B200785301 /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		DC84962B2ACF58B200785301 /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +173,7 @@
 		DCB4DE832AD1AA660047217F /* RickMortyDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RickMortyDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB4DE852AD1AA660047217F /* RickMortyDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickMortyDomain.h; sourceTree = "<group>"; };
 		DCB4DE8A2AD1AA660047217F /* RickMortyDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDomainTests.swift; sourceTree = "<group>"; };
+		DCB4DE8F2AD1AA660047217F /* CharacterLoaderDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLoaderDomainTests.swift; sourceTree = "<group>"; };
 		DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyLoader.swift; sourceTree = "<group>"; };
 		DCB4DE9B2AD1ADF90047217F /* RemoteCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterLoader.swift; sourceTree = "<group>"; };
 		DCC6B5512AF0972500438BB7 /* NetworkClientDownloadImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDownloadImageUseCaseTests.swift; sourceTree = "<group>"; };
@@ -302,6 +306,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		DC43E5A42AF1F26400C06D51 /* DownloadImage */ = {
+			isa = PBXGroup;
+			children = (
+				DC43E5A52AF1F28F00C06D51 /* RemoteCharacterDownloadImage.swift */,
+			);
+			path = DownloadImage;
+			sourceTree = "<group>";
+		};
 		DC8495FD2ACF580700785301 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +379,7 @@
 		DCB4DE842AD1AA660047217F /* RickMortyDomain */ = {
 			isa = PBXGroup;
 			children = (
+				DC43E5A42AF1F26400C06D51 /* DownloadImage */,
 				DCB4DE9A2AD1ADE80047217F /* RemoteLoader */,
 				DCB4DE852AD1AA660047217F /* RickMortyDomain.h */,
 				DCB4DE982AD1AA7B0047217F /* RickMortyLoader.swift */,
@@ -377,7 +390,8 @@
 		DCB4DE8E2AD1AA660047217F /* RickMortyDomainTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCB4DE8F2AD1AA660047217F /* CharacterDomainTests.swift */,
+				DCB4DE8F2AD1AA660047217F /* CharacterLoaderDomainTests.swift */,
+				DC43E5A22AF1F1CD00C06D51 /* CharacterDownloadImageDomainTests.swift */,
 			);
 			path = RickMortyDomainTests;
 			sourceTree = "<group>";
@@ -850,6 +864,7 @@
 			files = (
 				DCB4DE992AD1AA7B0047217F /* RickMortyLoader.swift in Sources */,
 				DCB4DE9C2AD1ADF90047217F /* RemoteCharacterLoader.swift in Sources */,
+				DC43E5A62AF1F28F00C06D51 /* RemoteCharacterDownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,7 +873,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB4DEA32AD1AFB90047217F /* XCTestCase+Helper.swift in Sources */,
-				DCB4DE902AD1AA660047217F /* CharacterDomainTests.swift in Sources */,
+				DCB4DE902AD1AA660047217F /* CharacterLoaderDomainTests.swift in Sources */,
+				DC43E5A32AF1F1CD00C06D51 /* CharacterDownloadImageDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
