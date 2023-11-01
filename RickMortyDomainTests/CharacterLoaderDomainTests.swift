@@ -22,18 +22,19 @@ final class CharacterLoaderDomainTests: XCTestCase {
 
     func test_load_twice() {
         let (sut, spy, anyUrl) = makeSUT()
-        
+
         sut.load { _ in }
         sut.load { _ in }
-        
+
         XCTAssertEqual(spy.urlRequest, [anyUrl, anyUrl])
     }
 
     func test_load_returned_error_for_connectivity() {
+
         let (sut, spy, _) = makeSUT()
         
         assert(sut, completion: .failure(.withoutConnectivity)) {
-            spy.completionWithError()
+            spy.completionRequestWithError()
         }
 
     }
@@ -42,7 +43,7 @@ final class CharacterLoaderDomainTests: XCTestCase {
         let (sut, spy, _) = makeSUT()
 
         assert(sut, completion: .failure(.invalidData)) {
-            spy.completionWithSuccess()
+            spy.completionRequestWithSuccess()
         }
     }
 
@@ -50,7 +51,7 @@ final class CharacterLoaderDomainTests: XCTestCase {
         let (sut, spy, _) = makeSUT()
 
         assert(sut, completion: .success([])) {
-            spy.completionWithSuccess(data: emptyData())
+            spy.completionRequestWithSuccess(data: emptyData())
         }
 
     }
@@ -63,7 +64,7 @@ final class CharacterLoaderDomainTests: XCTestCase {
         assert(sut, completion: .success([model, model2])) {
             let jsonItems = ["results": [json, json2]]
             let data = try! JSONSerialization.data(withJSONObject: jsonItems)
-            spy.completionWithSuccess(data: data)
+            spy.completionRequestWithSuccess(data: data)
         }
     }
     
@@ -75,7 +76,7 @@ final class CharacterLoaderDomainTests: XCTestCase {
             let (_, json2) = makeCharacter()
             let jsonItems = ["results": [json, json2]]
             let data = try! JSONSerialization.data(withJSONObject: jsonItems)
-            spy.completionWithSuccess(data: data, statusCode: 201)
+            spy.completionRequestWithSuccess(data: data, statusCode: 201)
         }
     }
     
@@ -90,7 +91,7 @@ final class CharacterLoaderDomainTests: XCTestCase {
         })
         
         sut = nil
-        spy.completionWithSuccess()
+        spy.completionRequestWithSuccess()
         XCTAssertNil(returnedResult)
     }
     
@@ -189,7 +190,8 @@ final class NetworkClientSpy: NetworkClient {
 
     var urlRequest = [URL]()
     private var completionRequestHandler: ((NetworkResult) -> Void)?
-    
+    private var completionDownloadImageHandler: ((Result<Data, Error>) -> Void)?
+
     func request(from url: URL,
                  completion: @escaping (NetworkResult) -> Void) {
         urlRequest.append(url)
@@ -198,13 +200,14 @@ final class NetworkClientSpy: NetworkClient {
 
     func downloadImage(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         urlRequest.append(url)
+        completionDownloadImageHandler = completion
     }
 
-    func completionWithError() {
+    func completionRequestWithError() {
         completionRequestHandler?(.failure(anyError()))
     }
     
-    func completionWithSuccess(data: Data = Data(), statusCode: Int = 200) {
+    func completionRequestWithSuccess(data: Data = Data(), statusCode: Int = 200) {
         let response = HTTPURLResponse(
             url: urlRequest[0],
             statusCode: statusCode,
@@ -212,6 +215,14 @@ final class NetworkClientSpy: NetworkClient {
             headerFields: nil
         )!
         completionRequestHandler?(.success((data, response)))
+    }
+    
+    func completionDownloadImageWithSuccess(data: Data = Data()) {
+        completionDownloadImageHandler?(.success(data))
+    }
+    
+    func completionDownloadImageWithError(error: Error) {
+        completionDownloadImageHandler?(.failure(error))
     }
     
     private func anyError() -> Error {
