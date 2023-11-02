@@ -19,6 +19,11 @@ public struct Character: Codable, Equatable {
     public let episode: [String]
     public let url: String
     public let created: String
+    public var imageData: Data?
+    
+    mutating func setImageData(data: Data) {
+        imageData = data
+    }
 }
 
 public struct Origin: Codable, Equatable {

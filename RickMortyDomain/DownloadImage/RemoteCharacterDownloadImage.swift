@@ -7,15 +7,15 @@
 
 import NetworkClient
 
-final class RemoteCharacterDownloadImage: CharacterDownloadImage {
+public final class RemoteCharacterDownloadImage: CharacterDownloadImage {
     
     let network: NetworkClient
     
-    init(network: NetworkClient) {
+    public init(network: NetworkClient) {
         self.network = network
     }
     
-    func downloadImage(fromUrl: URL, completion: @escaping (Result<Data, Error>) -> Void) {
+    public func downloadImage(fromUrl: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         network.downloadImage(from: fromUrl, completion: completion)
     }
 

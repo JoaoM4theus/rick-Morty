@@ -9,9 +9,9 @@ import UIKit
 import RickMortyDomain
 
 public final class CharacterListCompose {
-    public static func compose(service: CharacterLoader) -> UITableViewController {
+    public static func compose(service: CharacterLoader, downloadImage: CharacterDownloadImage) -> UITableViewController {
         let decorator = MainQueueDispatchDecorator(decorate: service)
-        let presenter = CharacterListPresenter()
+        let presenter = CharacterListPresenter(service: downloadImage)
         let interactor = CharacterListInteractor(service: decorator, presenter: presenter)
         let controller = CharacterListViewController(interactor: interactor)
         presenter.view = controller

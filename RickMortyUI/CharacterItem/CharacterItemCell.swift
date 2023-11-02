@@ -74,8 +74,11 @@ class CharacterItemCell: UITableViewCell {
     private func renderImage() -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 60 / 2
+        imageView.clipsToBounds = true
         return imageView
     }
+
 }
 
 extension CharacterItemCell: ViewCodeHelper {

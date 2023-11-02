@@ -138,7 +138,6 @@ final class CharacterUITests: XCTestCase {
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.name.text, item.name)
         XCTAssertEqual(cell?.moreInfo.text, "More info...")
-
     }
     
     func test_load_completion_dispatches_in_background_threads() {
@@ -160,7 +159,8 @@ final class CharacterUITests: XCTestCase {
         line: UInt = #line
     ) -> (sut: CharacterListViewController, service: CharacterLoaderSpy) {
         let service = CharacterLoaderSpy()
-        let sut = CharacterListCompose.compose(service: service) as! CharacterListViewController
+        let serviceImage = CharacterDownloadImageSpy()
+        let sut = CharacterListCompose.compose(service: service, downloadImage: serviceImage) as! CharacterListViewController
 
         trackForMemoryLeaks(sut, file: file, line: line)
         trackForMemoryLeaks(service, file: file, line: line)

@@ -11,20 +11,24 @@ import RickMortyDomain
 final class CharacterItemCellController {
     
     let model: Character
+    let service: CharacterDownloadImage
     
-    init(model: Character) {
+    init(model: Character, service: CharacterDownloadImage) {
         self.model = model
+        self.service = service
     }
-    
+
     func renderCell(_ cell: CharacterItemCell) {
         cell.name.text = model.name
         cell.moreInfo.text = "More info..."
         if let url = URL(string: model.image) {
-//            cell.characterImage.downloadImage(from: url) { image in
-//                cell.characterImage.image = image
-//                cell.characterImage.layer.cornerRadius = cell.characterImage.frame.width / 2
-//                cell.characterImage.clipsToBounds = true
-//            }
+            service.downloadImage(fromUrl: url) { result in
+                switch result {
+                case let .success(data):
+                    cell.characterImage.image = UIImage(data: data)
+                case .failure: break
+                }
+            }
         }
     }
 

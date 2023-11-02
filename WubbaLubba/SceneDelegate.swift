@@ -26,12 +26,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
     }
 
+    private func remoteDownloadImageService() -> RemoteCharacterDownloadImage {
+        let session = URLSession(configuration: .ephemeral)
+        let network = NetworkService(session: session)
+        return RemoteCharacterDownloadImage(
+            network: network
+        )
+    }
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         
         let service = remoteService()
-        let controller = CharacterListCompose.compose(service: service)
+        let controller = CharacterListCompose.compose(service: service, downloadImage: remoteDownloadImageService())
         let navigation = UINavigationController(rootViewController: controller)
         
         window = UIWindow(windowScene: scene)
