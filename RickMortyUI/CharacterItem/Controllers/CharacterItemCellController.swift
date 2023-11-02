@@ -29,7 +29,9 @@ final class CharacterItemCellController {
                 case .failure: break
                 }
             }
+            return
         }
+        cell.characterImage.image = UIImage(named: "avatar_placeholder")
     }
 
 }
