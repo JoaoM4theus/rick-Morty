@@ -21,17 +21,12 @@ final class WubbaLubbaUITests: XCTestCase {
         XCTAssertEqual(app.cells.firstMatch.staticTexts.count, 2)
     }
     
-    func testExample() throws {
+    func test_launch_dont_should_be_show_remote_data_with_client_without_connectivity() {
         let app = XCUIApplication()
+        app.launchArguments = ["-connectivity", "offline"]
         app.launch()
+        
+        XCTAssertEqual(app.cells.count, 0)
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }

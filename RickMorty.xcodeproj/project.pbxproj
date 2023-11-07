@@ -50,6 +50,7 @@
 		DCE4F6F22AE09DC100F3BDA2 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */; };
 		DCE4F6F42AE0A18300F3BDA2 /* CharacterListCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */; };
 		DCE4F6F52AE0A32100F3BDA2 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84963C2ACF634100785301 /* XCTestCase+Helper.swift */; };
+		DCEE677D2AF9DF100021F935 /* SceneDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE677C2AF9DF100021F935 /* SceneDelegateMock.swift */; };
 		DCFECDDF2AE7364B00979603 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +194,7 @@
 		DCE4F6EF2AE0998B00F3BDA2 /* CharacterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListInteractor.swift; sourceTree = "<group>"; };
 		DCE4F6F12AE09DC100F3BDA2 /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
 		DCE4F6F32AE0A18300F3BDA2 /* CharacterListCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCompose.swift; sourceTree = "<group>"; };
+		DCEE677C2AF9DF100021F935 /* SceneDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateMock.swift; sourceTree = "<group>"; };
 		DCFECDDE2AE7364B00979603 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,6 +436,7 @@
 			children = (
 				DCD9AF662AE9E34900838A03 /* AppDelegate.swift */,
 				DCD9AF682AE9E34900838A03 /* SceneDelegate.swift */,
+				DCEE677C2AF9DF100021F935 /* SceneDelegateMock.swift */,
 				DCD9AF6F2AE9E34B00838A03 /* Assets.xcassets */,
 				DCD9AF712AE9E34B00838A03 /* LaunchScreen.storyboard */,
 				DCD9AF742AE9E34B00838A03 /* Info.plist */,
@@ -882,6 +885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCEE677D2AF9DF100021F935 /* SceneDelegateMock.swift in Sources */,
 				DCD9AF672AE9E34900838A03 /* AppDelegate.swift in Sources */,
 				DCD9AF692AE9E34900838A03 /* SceneDelegate.swift in Sources */,
 			);
