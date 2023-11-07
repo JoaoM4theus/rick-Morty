@@ -62,13 +62,4 @@ final class CharacterDownloadImageSpy: CharacterDownloadImage {
         methodsCalled.append(.load)
     }
 
-//    private var completionHandler: ((Result<[Character], RickMortyResultError>) -> Void)?
-//    func load(completion: @escaping (Result<[Character], RickMortyResultError>) -> Void) {
-//        methodsCalled.append(.load)
-//        completionHandler = completion
-//    }
-//
-//    func completionSuccess(_ result: Result<[Character], RickMortyResultError>) {
-//        completionHandler?(result)
-//    }
 }
