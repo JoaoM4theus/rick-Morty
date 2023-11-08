@@ -66,6 +66,76 @@ targets:
     dependencies:
       - target: WubbaLubba
 
+  WubbaLubbaUITests:
+    templates:
+      - iOSAppUITests
+    dependencies:
+      - target: WubbaLubba
+
+schemes:
+  WubbaLubba:
+    build:
+      targets:
+        WubbaLubba: [run, test, archive]
+    archive:
+      config: Release
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: 
+        - WubbaLubba
+      targets:
+        - name: WubbaLubbaTests
+          randomExecutionOrder: true
+        - name: WubbaLubbaUITests
+          randomExecutionOrder: true
+
+  RickMortyUI:
+    build:
+      targets:
+        RickMortyUI: [run, test]
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: 
+        - RickMortyUI
+      targets:
+        - name: RickMortyUITests
+          randomExecutionOrder: true
+
+  RickMortyDomain:
+    build:
+      targets:
+        RickMortyDomain: [run, test]
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: 
+        - RickMortyDomain
+      targets:
+        - name: RickMortyDomainTests
+          randomExecutionOrder: true
+
+  NetworkClient:
+    build:
+      targets:
+        NetworkClient: [run, test]
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: 
+        - NetworkClient
+      targets:
+        - name: NetworkClientTests
+          randomExecutionOrder: true
 
 targetTemplates:
   iOSFramework:
@@ -106,5 +176,13 @@ targetTemplates:
       - path: XCTestCase
         createIntermediateGroups: false
         type: group
+    info:
+      path: ${target_name}/Info.plist
+
+  iOSAppUITests: 
+    platform: iOS
+    type: bundle.ui-testing
+    sources: 
+      - path: ${target_name}
     info:
       path: ${target_name}/Info.plist

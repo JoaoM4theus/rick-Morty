@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02CD5D1A957435B9E913593A /* RickMortyUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCDABAD6D00132E991B58D2 /* RickMortyUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		080C0FDAADCE67B98C71E094 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E4780F22346F7B756B550 /* XCTestCase+Helper.swift */; };
+		0CF977A3F51392A9802B9FD0 /* WubbaLubbaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A71E1E356D5C5F524479E6E /* WubbaLubbaUITestsLaunchTests.swift */; };
 		185DC127EFB14D3F6725D1CB /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83A2EDC7CBCE1AE86401C805 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		19A474C7735C1A3CCD758B1A /* WubbaLubbaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043450BD8A470B319418AB64 /* WubbaLubbaTests.swift */; };
 		2C4C659A4D3BD14DD2501237 /* XCTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E4780F22346F7B756B550 /* XCTestCase+Helper.swift */; };
@@ -31,6 +32,7 @@
 		8689A758E0CBEF0BAA6C5318 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905DC77B003BF62ACD44E05A /* MainQueueDispatchDecorator.swift */; };
 		90D0A9233F63277CF4665B8D /* RickMortyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4683E154E4603D997A8D913 /* RickMortyLoader.swift */; };
 		91ED52B5A39BAE828FB73673 /* URLSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2A49D6AAF99F645A75E52 /* URLSessionSpy.swift */; };
+		9ADB6DBBA363602A2FCA0403 /* WubbaLubbaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2075B26AFFF2E8C8C136019B /* WubbaLubbaUITests.swift */; };
 		A77D5C4BC627AD0D4793B96E /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83A2EDC7CBCE1AE86401C805 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A82ADFF7D6F418DD49405858 /* CharacterListCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9574286B14CE399CAA2BA /* CharacterListCompose.swift */; };
 		A901C4E8DF326029006EBC60 /* RickMortyDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F3E16532F7A7A763AAC77D /* RickMortyDomain.framework */; };
@@ -106,6 +108,13 @@
 			remoteGlobalIDString = 4C9C376EEF7CD9136D3DB290;
 			remoteInfo = NetworkClient;
 		};
+		E4457B37F6B3A323A296DD00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68108D83BAF13C8F856F7AAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DDB79A82CF55B800A6DFC3D;
+			remoteInfo = WubbaLubba;
+		};
 		EB8C4D31B79B063C645B0562 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 68108D83BAF13C8F856F7AAD /* Project object */;
@@ -180,11 +189,15 @@
 		11F2D2BEDBDDD9C3CD313F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		150E20411F8785131DC22530 /* RemoteCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterLoader.swift; sourceTree = "<group>"; };
 		1B6AC55D6D2B426B484FF296 /* URLSessionDataTaskSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskSpy.swift; sourceTree = "<group>"; };
+		2075B26AFFF2E8C8C136019B /* WubbaLubbaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WubbaLubbaUITests.swift; sourceTree = "<group>"; };
 		212D640A8E3542720210B746 /* NetworkClientDownloadImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDownloadImageUseCaseTests.swift; sourceTree = "<group>"; };
 		21F9574286B14CE399CAA2BA /* CharacterListCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCompose.swift; sourceTree = "<group>"; };
 		29FF79B0EB8DE6559193978A /* CharacterItemCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCellController.swift; sourceTree = "<group>"; };
+		2F0D6CACC096CA752613E215 /* WubbaLubbaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WubbaLubbaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		322A7B6FD0F7787623AD8B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		34BBC4F4443A8C2C54FE8046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		389EA118EECB398CE607B3D9 /* CharacterItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemUITests.swift; sourceTree = "<group>"; };
+		3A71E1E356D5C5F524479E6E /* WubbaLubbaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WubbaLubbaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DBCA8E4DC492B3AD02CBD31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F2C112081E5AA29A93611A8 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		4F768D313159BCF01DDB4D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -285,6 +298,7 @@
 				21F49CF117F915037381908F /* RickMortyUITests */,
 				B5CD264F49685DF273CCAB6F /* WubbaLubba */,
 				28679F98DC264EE82CEAEF1F /* WubbaLubbaTests */,
+				2B0B348CB08F6F7700C9BEB3 /* WubbaLubbaUITests */,
 				CAEE6044201C670888AB3300 /* XCTestCase */,
 				95A471D75BFCD304CE6AF652 /* Products */,
 			);
@@ -329,6 +343,16 @@
 				FBA159157C9829F808EC9C36 /* VIP */,
 			);
 			path = Character;
+			sourceTree = "<group>";
+		};
+		2B0B348CB08F6F7700C9BEB3 /* WubbaLubbaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				322A7B6FD0F7787623AD8B92 /* Info.plist */,
+				2075B26AFFF2E8C8C136019B /* WubbaLubbaUITests.swift */,
+				3A71E1E356D5C5F524479E6E /* WubbaLubbaUITestsLaunchTests.swift */,
+			);
+			path = WubbaLubbaUITests;
 			sourceTree = "<group>";
 		};
 		3D350E9938B1F92862A3212E /* DownloadImage */ = {
@@ -401,6 +425,7 @@
 				80EAF0AF9FAE7480FF3782EF /* RickMortyUITests.xctest */,
 				0FD85C7EC2D8496786E9485C /* WubbaLubba.app */,
 				A5489FDEC2D906C0BC791EBD /* WubbaLubbaTests.xctest */,
+				2F0D6CACC096CA752613E215 /* WubbaLubbaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -625,6 +650,22 @@
 			productReference = 0CCDABAD6D00132E991B58D2 /* RickMortyUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9BD844D671F7ED8599CC4C40 /* WubbaLubbaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C158A80E9BC53AC2D24CFB /* Build configuration list for PBXNativeTarget "WubbaLubbaUITests" */;
+			buildPhases = (
+				A10CE943B807CB43ACF79C4F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59BE66417502AC997CD098B1 /* PBXTargetDependency */,
+			);
+			name = WubbaLubbaUITests;
+			productName = WubbaLubbaUITests;
+			productReference = 2F0D6CACC096CA752613E215 /* WubbaLubbaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B52C5BA7A1FC873C9D738B61 /* RickMortyDomain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DC80D19FFEA3C042FF34EBC /* Build configuration list for PBXNativeTarget "RickMortyDomain" */;
@@ -652,6 +693,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					9BD844D671F7ED8599CC4C40 = {
+						TestTargetID = 2DDB79A82CF55B800A6DFC3D;
+					};
 				};
 			};
 			buildConfigurationList = 3CCD31378A22B352772818B0 /* Build configuration list for PBXProject "WubbaLubba" */;
@@ -674,6 +718,7 @@
 				161808AB7E138CF4EEE71082 /* RickMortyUITests */,
 				2DDB79A82CF55B800A6DFC3D /* WubbaLubba */,
 				73AFE9C66EE78CD9F21FFC54 /* WubbaLubbaTests */,
+				9BD844D671F7ED8599CC4C40 /* WubbaLubbaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -731,6 +776,15 @@
 				5A1DF9E82C672C37B284B183 /* RemoteCharacterDownloadImage.swift in Sources */,
 				4CC4FEC8FC6A7ABF965EB95E /* RemoteCharacterLoader.swift in Sources */,
 				90D0A9233F63277CF4665B8D /* RickMortyLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10CE943B807CB43ACF79C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ADB6DBBA363602A2FCA0403 /* WubbaLubbaUITests.swift in Sources */,
+				0CF977A3F51392A9802B9FD0 /* WubbaLubbaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +851,11 @@
 			isa = PBXTargetDependency;
 			target = 7B700D8428F83019C62C06F8 /* RickMortyUI */;
 			targetProxy = EB8C4D31B79B063C645B0562 /* PBXContainerItemProxy */;
+		};
+		59BE66417502AC997CD098B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DDB79A82CF55B800A6DFC3D /* WubbaLubba */;
+			targetProxy = E4457B37F6B3A323A296DD00 /* PBXContainerItemProxy */;
 		};
 		633C6B7E0CE05BA756C28480 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -976,6 +1035,23 @@
 			};
 			name = Release;
 		};
+		3D434D287FB4D6A17B815321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WubbaLubbaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rickmorty.WubbaLubbaUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WubbaLubba;
+			};
+			name = Debug;
+		};
 		76B915BD0377893AE580B410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1012,6 +1088,23 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickmorty.RickMortyDomainTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84C2AF5C6E631B82C26F5BDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WubbaLubbaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rickmorty.WubbaLubbaUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WubbaLubba;
 			};
 			name = Release;
 		};
@@ -1308,6 +1401,15 @@
 			buildConfigurations = (
 				D8FB50F170C64FCC3405AAD0 /* Debug */,
 				76EA7E67D0D4713761707053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		63C158A80E9BC53AC2D24CFB /* Build configuration list for PBXNativeTarget "WubbaLubbaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D434D287FB4D6A17B815321 /* Debug */,
+				84C2AF5C6E631B82C26F5BDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
