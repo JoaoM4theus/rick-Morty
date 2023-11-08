@@ -11,7 +11,7 @@ options:
   xcodeVersion: "14.3"
   createIntermediateGroups: true
   developmentLanguage: "es-US"
-  bundlePrefix: com.RickMorty
+  bundleIdPrefix: com.rickmorty
   deploymentTarget:
     iOS: 15.0
     macOS: 12.0
@@ -52,6 +52,20 @@ targets:
     dependencies:
       - target: RickMortyUI
   
+  WubbaLubba:
+    templates:
+      - iOSApp
+    dependencies:
+      - target: NetworkClient
+      - target: RickMortyDomain
+      - target: RickMortyUI
+
+  WubbaLubbaTests:
+    templates:
+      - iOSAppTests
+    dependencies:
+      - target: WubbaLubba
+
 
 targetTemplates:
   iOSFramework:
@@ -73,3 +87,24 @@ targetTemplates:
     info:
       path: ${target_name}/Info.plist
       
+  iOSApp:
+    platform: iOS
+    type: application
+    sources: 
+      - path: ${target_name}
+    settings:
+      base:
+        INFOPLIST_FILE: ${target_name}/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.rickmorty.WubbaLubba
+
+
+  iOSAppTests:
+    platform: iOS
+    type: bundle.unit-test
+    sources: 
+      - path: ${target_name}
+      - path: XCTestCase
+        createIntermediateGroups: false
+        type: group
+    info:
+      path: ${target_name}/Info.plist
