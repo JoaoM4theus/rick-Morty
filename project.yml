@@ -54,25 +54,6 @@ targets:
   
 
 targetTemplates:
-  CrossPlatform:
-    platform: iOS
-    type: framework
-    sources:
-      - path: ${target_name}
-    info:
-      path: ${target_name}/Info.plist
-
-  CrossPlatformTests:
-    platform: iOS
-    type: bundle.unit-test
-    sources:
-      - path: ${target_name}
-      - path: XCTestCase
-        createIntermediateGroups: false
-        type: group
-    info:
-      path: ${target_name}/Info.plist
-
   iOSFramework:
     platform: iOS
     type: framework
