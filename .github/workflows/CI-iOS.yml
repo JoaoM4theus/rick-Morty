@@ -30,4 +30,4 @@ jobs:
         run: xcodegen generate
 
       - name: Build and Test
-        run: xcodebuild clean build test -project WubbaLubba.xcodeproj -scheme "CI-iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2" ONLY_ACTIVE_ARCH=YES
+        run: bundle exec fastlane ci_iOS
