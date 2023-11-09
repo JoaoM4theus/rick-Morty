@@ -137,6 +137,38 @@ schemes:
         - name: NetworkClientTests
           randomExecutionOrder: true
 
+  CI-macOS:
+    build:
+      targets:
+        RickMortyDomain: [run, test]
+        NetworkClient: [run, test]
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      targets:
+        - name: RickMortyDomainTests
+          randomExecutionOrder: true
+        - name: NetworkClientTests
+          randomExecutionOrder: true
+
+  CI-iOS:
+    build:
+      targets:
+        RickMortyUI: [run, test]
+        WubbaLubba: [run, test]
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      targets:
+        - name: RickMortyUITests
+          randomExecutionOrder: true
+        - name: WubbaLubbaTests
+          randomExecutionOrder: true
+        - name: WubbaLubbaUITests
+          randomExecutionOrder: true
+
 targetTemplates:
   iOSFramework:
     platform: iOS
