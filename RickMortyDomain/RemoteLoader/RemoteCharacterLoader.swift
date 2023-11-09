@@ -35,7 +35,7 @@ public final class RemoteCharacterLoader: CharacterLoader {
             guard let self else { return }
             switch result {
             case let .success((data, response)):
-                completion(successfullyValidation(data, response: response))
+                completion(self.successfullyValidation(data, response: response))
             case .failure:
                 completion(.failure(.withoutConnectivity))
             }
