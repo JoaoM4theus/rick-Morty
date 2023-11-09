@@ -30,4 +30,4 @@ jobs:
         run: xcodegen generate
 
       - name: Build and Test
-        run: bundle exec fastlane ci_iOS
+        run: fastlane ci_iOS
