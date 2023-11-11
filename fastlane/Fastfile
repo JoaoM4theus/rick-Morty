@@ -1,0 +1,170 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+def ensure_temp_keychain(name)
+  delete_keychain(
+      name: name
+  ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+  create_keychain(
+      name: name,
+      password: 'temppassword',
+      unlock: false,
+      timeout: 0
+  )
+end
+
+lane :ensure_keychain do
+  ensure_temp_keychain 'fastlane_enterprise'
+end
+
+lane :security do
+  sh "security set-key-partition-list -S apple-tool:,apple: -s -k temppassword ~/Library/Keychains/fastlane_enterprise-db"
+end
+
+desc "Lane to run Scheme CI-macOS"
+lane :ci_macOS do
+  scan(
+      clean: true,
+      scheme: "CI-macOS",
+      sdk: "macosx",
+      destination: "platform=macOS"
+  )
+end
+
+desc "Lane to run Scheme CI-iOS"
+lane :ci_iOS do
+  scan(
+      clean: true,
+      scheme: "CI-iOS",
+      sdk: "iphonesimulator",
+      destination: "platform=iOS Simulator,name=iPhone 14 Pro Max,OS=16.4"
+  )
+end
+
+desc "Lane to genereate certificates"
+lane :certificates_wubbalubba do  |fastlane|
+
+  # Development
+  match(
+      git_branch: "{BRANCH}",
+      git_url: "{PRIVATE_GIT_TO_STORAGE_CERTIFICATES}",
+      username: fastlane[:username],
+      type: "development",
+      team_id: "{TEAM_ID}",
+      team_name: "{TEAM_NAME}",
+      app_identifier: "{BUNDLER_ID}",
+      readonly: false
+  )
+  
+  # App Store
+  match(
+      git_branch: "{BRANCH}",
+      git_url: "{PRIVATE_GIT_TO_STORAGE_CERTIFICATES}",
+      username: fastlane[:username],
+      type: "development",
+      team_id: "{TEAM_ID}",
+      team_name: "{TEAM_NAME}",
+      app_identifier: "{BUNDLER_ID}",
+      readonly: false
+  )
+end
+
+desc "Lane to genereate certificates"
+lane :nuke_certificates_wubbalubba do  |fastlane|
+
+  # Development
+  match_nuke(
+      git_branch: "{BRANCH}",
+      git_url: "{PRIVATE_GIT_TO_STORAGE_CERTIFICATES}",
+      username: fastlane[:username],
+      type: "development",
+      team_id: "{TEAM_ID}",
+      team_name: "{TEAM_NAME}",
+      app_identifier: "{BUNDLER_ID}",
+      readonly: false
+  )
+  
+  # App Store
+  match_nuke(
+      git_branch: "{BRANCH}",
+      git_url: "{PRIVATE_URL_GIT_TO_STORAGE_CERTIFICATES}",
+      username: fastlane[:username],
+      type: "development",
+      team_id: "{TEAM_ID}",
+      team_name: "{TEAM_NAME}",
+      app_identifier: "{BUNDLER_ID}",
+      readonly: false
+  )
+end
+
+desc "Lane dedicated to run Deploy of app SunnyDay"
+  lane :release_sunnyDay do 
+    
+    match(
+      git_branch: "{BRANCH}",
+      git_url: "{PRIVATE_URL_GIT_TO_STORAGE_CERTIFICATES}",
+      git_basic_authorization: Base64.strict_encode64(ENV['GIT_AUTHORIZATION']),
+      git_user_email: "#{ENV['GIT_USER_EMAIL']}",
+      type: "appstore",
+      team_id: "{TEAM_ID}",
+      team_name: "{TEAM_NAME}",
+      app_identifier: "{BUNDLER_ID}",
+      readonly: true,
+      keychain_name: 'fastlane_enterprise',
+      username: ENV['username']
+    )
+  
+    security
+  
+    ci_build_number = "#{Time.now.strftime("%Y.%m.%d")}.#{ENV['CI_BUILD_NUMBER']}"
+    increment_build_number(
+        build_number: "#{ci_build_number}",
+        xcodeproj: "WubbaLubba.xcodeproj"
+    )
+  
+    gym(
+      scheme: "WubbaLubba",
+      clean: true,
+      export_method: "app-store",
+      archive_path: "./fastlane/output/build/archive/WubbaLubba.xcarchive",
+      output_directory: "./fastlane/output/iphoneos/Release/",
+    )
+  
+  end
+
+  desc "Lane dedicated to upload do Testflight"
+    lane :upload_testflight do |options|
+    
+      api_key_path = "./.github/deployment/{AuthKey.p8}"
+      ipa_path = "./fastlane/output/iphoneos/Release/WubbaLubba.ipa"
+    
+      apiKey = app_store_connect_api_key(
+          key_id: "#{ENV['KEY_ID']}",
+          issuer_id: "#{ENV['ISSUER_ID']}",
+          key_filepath: api_key_path
+      )
+    
+      upload_to_testflight(
+          api_key: apiKey,
+          ipa: ipa_path,
+          team_id: "{TEAM_ID}",
+          team_name: "{TEAM_USER_NAME}",
+          skip_submission: true,
+          skip_waiting_for_build_processing: true
+      )
+      
+    end

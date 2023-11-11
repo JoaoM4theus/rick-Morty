@@ -29,5 +29,23 @@ jobs:
       - name: Generate project
         run: xcodegen generate
 
-      - name: Build and Test
-        run: xcodebuild clean build test -project WubbaLubba.xcodeproj -scheme "CI-iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2" ONLY_ACTIVE_ARCH=YES
+      - name: Regressive tests
+        run: fastlane ci_iOS
+      
+      - name: ensure_keychain
+        run: fastlane ensure_keychain
+      
+      - name: Archive
+        run: fastlane release_sunnyDay
+        env:
+          GIT_AUTHORIZATION: ${{ secrets.GIT_AUTHORIZATION }}
+          GIT_USER_EMAIL:  ${{ secrets.GIT_USER_EMAIL }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          CI_BUILD_NUMBER: $GITHUB_RUN_NUMBER
+      
+      - name: upload testflight
+        run: fastlane upload_testflight
+        env:
+          KEY_ID: ${{ secrets.KEY_ID }}
+          ISSUER_ID: ${{ secrets.ISSUER_ID }}

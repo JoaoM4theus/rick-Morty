@@ -198,6 +198,13 @@ targetTemplates:
       base:
         INFOPLIST_FILE: ${target_name}/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.rickmorty.WubbaLubba
+      configs:
+        Release:
+          CODE_SIGN_IDENTITY: "{INSERT APPLE DISTRIBUTION}"
+          PROVISIONING_PROFILE_SPECIFIER: "{INSET MATCH APP STORE}"
+        Debug:
+          CODE_SIGN_IDENTITY: "{INSERT APPLE DEVELOPER}"
+          PROVISIONING_PROFILE_SPECIFIER: "{INSET MATCH DEVELOPMENT}"
 
 
   iOSAppTests:
