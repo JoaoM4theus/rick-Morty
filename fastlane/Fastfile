@@ -146,11 +146,11 @@ desc "Lane dedicated to run Deploy of app SunnyDay"
   
   end
 
-  desc "Lane dedicada para rodar upload do Testflight"
+  desc "Lane dedicated to upload do Testflight"
     lane :upload_testflight do |options|
     
-      api_key_path = "./.github/deployment/AuthKey_G7BDQH9896.p8"
-      ipa_path = "./fastlane/output/iphoneos/Release/SunnyDay.ipa"
+      api_key_path = "./.github/deployment/{AuthKey.p8}"
+      ipa_path = "./fastlane/output/iphoneos/Release/WubbaLubba.ipa"
     
       apiKey = app_store_connect_api_key(
           key_id: "#{ENV['KEY_ID']}",
@@ -161,8 +161,8 @@ desc "Lane dedicated to run Deploy of app SunnyDay"
       upload_to_testflight(
           api_key: apiKey,
           ipa: ipa_path,
-          team_id: "6BPH8672S8",
-          team_name: "Julio Fernandes",
+          team_id: "{TEAM_ID}",
+          team_name: "{TEAM_USER_NAME}",
           skip_submission: true,
           skip_waiting_for_build_processing: true
       )
